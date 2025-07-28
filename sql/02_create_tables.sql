@@ -25,3 +25,10 @@ CREATE TABLE IF NOT EXISTS actions(
     action_id SERIAL PRIMARY KEY,
     action_name VARCHAR(20) UNIQUE NOT NULL
 );
+
+-- Table to associate characters with their actions (Juntion Table)
+CREATE TABLE IF NOT EXISTS character_actions(
+    character_id INT NOT NULL REFERENCES characters(character_id) ON DELETE CASCADE,
+    action_id INT NOT NULL REFERENCES actions(action_id) ON DELETE CASCADE,
+    PRIMARY KEY (character_id, action_id)  -- Composite Primary Key
+);

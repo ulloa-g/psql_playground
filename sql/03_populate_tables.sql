@@ -40,3 +40,20 @@ INSERT INTO actions (action_name) VALUES
 ('Run'),
 ('Throw Fireball'),
 ('Use Hammer');
+
+INSERT INTO character_actions (character_id, action_id) VALUES
+(1, 1), -- Mario Jump
+(1, 2), -- Mario Run
+(1, 3), -- Mario Throw Fireball
+(2, 1), -- Luigi Jump
+(2, 2), -- Luigi Run
+(3, 1), -- Peach Jump
+(3, 2), -- Peach Run
+(4, 1), -- Bowser Jump
+(4, 2), -- Bowser Run
+(5, 1), -- Toad Jump
+(6, 1), -- Yoshi Jump
+(7, 1), -- Wario Jump
+(8, 1), -- Daisy Jump
+(9, 1)  -- Waluigi Jump
+ON CONFLICT (character_id, action_id) DO NOTHING;

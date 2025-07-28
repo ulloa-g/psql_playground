@@ -12,5 +12,16 @@ CREATE TABLE IF NOT EXISTS more_info(
     birthday DATE,
     height_cm INT,
     weight_kg NUMERIC(4, 1),
-    character_id INT REFERENCES characters(character_id) ON DELETE CASCADE UNIQUE NOT NULL
+    character_id INT UNIQUE NOT NULL REFERENCES characters(character_id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS sounds (
+    sound_id SERIAL PRIMARY KEY,
+    file_name VARCHAR(40) UNIQUE NOT NULL,
+    character_id INT NOT NULL REFERENCES characters(character_id) ON DELETE CASCADE 
+);
+
+CREATE TABLE IF NOT EXISTS actions(
+    action_id SERIAL PRIMARY KEY,
+    action_name VARCHAR(20) UNIQUE NOT NULL
 );

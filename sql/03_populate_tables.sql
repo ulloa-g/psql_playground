@@ -23,3 +23,20 @@ INSERT INTO more_info (birthday, height_cm, weight_kg, character_id) VALUES
 ('1992-06-23', NULL, NULL, 8), -- Daisy
 ('2000-04-01', 175, 75.0, 9) -- Waluigi
 ON CONFLICT (character_id) DO NOTHING;
+
+INSERT INTO sounds (file_name, character_id) VALUES
+('its-a-me.wav', 1),
+('yippee.wav', 1),
+('ha-ha.wav', 2),
+('oh-yeah.wav', 2),
+('yay.wav', 3),
+('woo-hoo.wav', 3),
+('mm-hmm.wav', 3),
+('yahoo.wav', 1)
+ON CONFLICT (file_name) DO NOTHING;
+
+INSERT INTO actions (action_name) VALUES
+('Jump'),
+('Run'),
+('Throw Fireball'),
+('Use Hammer');

@@ -10,4 +10,3 @@ PGPASSWORD=$PGPASSWORD psql -U $PGUSER -h localhost -d postgres -c "CREATE DATAB
 PGPASSWORD=$PGPASSWORD psql -U $PGUSER -h localhost -d "$DBNAME" -f ../sql/01_create_schema.sql
 PGPASSWORD=$PGPASSWORD psql -U $PGUSER -h localhost -d "$DBNAME" -f ../sql/02_create_tables.sql
 PGPASSWORD=$PGPASSWORD psql -U $PGUSER -h localhost -d "$DBNAME" -f ../sql/03_populate_tables.sql
-PGPASSWORD=$PGPASSWORD psql -U $PGUSER -h localhost -d "$DBNAME" -f ../sql/04_example_queries.sql
